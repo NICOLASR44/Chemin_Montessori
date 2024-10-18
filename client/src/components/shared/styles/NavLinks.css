@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+:root {
+  --clr-lavender: rgba(204, 189, 244, 1);
+  --clr-light-green: rgba(218, 255, 185, 1);
+  --clr-pink: rgba(255, 186, 243, 1);
+  --clr-intense-green: rgba(43, 216, 134, 1);
+  --clr-yellow: rgba(254, 239, 121, 1);
+  --clr-white: rgba(247, 247, 247, 1);
+  --clr-black: rgba(37, 37, 37, 1);
+  --clr-grey: rgba(166, 166, 166, 1);
+  --clr-deep-purple: rgba(101, 85, 143, 1);
+
+  --font-header: "Playfair Display", serif;
+  --font-body: "Lato", sans-serif;
+
+  --spacing-small: 0.6rem;
+  --spacing-medium: 1.5rem;
+  --spacing-large: 2rem;
+}
+
+.navbar__listing-pages {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-body);
+  gap: 1rem;
+  text-wrap: nowrap;
+  margin-top: 1.6rem;
+  transition: all 0.3s ease-in-out;
+  flex-wrap: nowrap;
+}
+
+.navbar__listing-pages li {
+  list-style: none;
+}
+
+.navbar__listing-pages a {
+  text-decoration: none;
+  color: var(--clr-black);
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--clr-grey);
+  border-radius: 16px;
+  transition:
+    border 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.navbar__listing-pages a:hover {
+  border: 1px solid var(--clr-black);
+}
+
+.navbar__play-button {
+  background-color: var(--clr-light-green);
+  font-weight: bold;
+  box-shadow: rgba(0, 0, 0, 0.35) 2px 3px 3px -1px;
+}
+
+/* Media Queries */
+
+/* Tablette */
+
+@media (max-width: 1200px) {
+  .navbar__listing-pages {
+    gap: 0.2rem;
+    font-size: 0.9rem;
+  }
+
+  .navbar__listing-pages a {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.7rem;
+  }
+}
+@media (max-width: 840px) {
+  .navbar__listing-pages {
+    gap: 0.2rem;
+    font-size: 0.9rem;
+    margin-left: -1.5rem;
+  }
+
+  .navbar__listing-pages a {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 790px) {
+  .navbar__listing-pages {
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 90%;
+  }
+
+  .navbar__listing-pages a {
+    padding: 0.3rem 0.6rem;
+    border: none;
+    border-bottom: 1rem solid;
+  }
+}

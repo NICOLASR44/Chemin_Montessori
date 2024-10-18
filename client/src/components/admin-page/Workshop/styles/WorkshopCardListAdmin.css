@@ -1,0 +1,10 @@
+.workshop-cardlist-admin {
+  margin-top: 2rem;
+  .workshop-cardlist-admin__list {
+    text-align: center;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1rem;
+  }
+}

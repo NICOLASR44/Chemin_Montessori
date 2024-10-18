@@ -1,0 +1,20 @@
+.admin-blog-card-container {
+  background-color: lightgrey;
+  padding: 1rem 2.5rem;
+  border-radius: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  height: 6.25rem;
+  position: relative;
+
+  .admin-blog-card-container__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .admin-blog-card-containe__sections {
+    font-size: 1.25rem;
+  }
+}

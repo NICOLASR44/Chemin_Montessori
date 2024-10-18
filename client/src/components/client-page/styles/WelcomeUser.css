@@ -1,0 +1,29 @@
+.welcomeUser {
+  font-size: 22px;
+  background-color: var(--clr-lavender);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  padding: 1rem;
+  max-width: 350px;
+  margin-bottom: 2vh;
+
+  .welcomeUser__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.875rem;
+
+    .welcomeUser__avatar {
+      border-radius: 50px;
+      width: 20%;
+    }
+    .welcomeUser__title {
+      font-family: var(--font-body);
+    }
+    .welcomeUser__username {
+      font-family: var(--font-header);
+      font-style: italic;
+    }
+  }
+}

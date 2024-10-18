@@ -1,0 +1,46 @@
+.download__resources {
+  .download__resources-titleAndSun {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5rem;
+    left: 4rem;
+  }
+
+  .download__resource-title {
+    position: relative;
+    font-family: var(--font-body);
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: 2rem;
+    z-index: 1;
+  }
+
+  .download__resource-yellowSun-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform: translate(-60%, 10%);
+  }
+}
+
+@media (width <= 670px) {
+  .download__resources {
+    display: flex;
+    flex-direction: column;
+
+    .download__resources-titleAndSun {
+      display: contents;
+    }
+
+    .download__resource-title {
+      font-size: 1.5rem;
+      text-align: center;
+      padding: 3rem;
+      margin-top: 0rem;
+    }
+    .download__resource-yellowSun-svg {
+      transform: translate(-30%, 70%);
+    }
+  }
+}

@@ -1,0 +1,159 @@
+:root {
+  --clr-yellow: rgba(254, 239, 121, 1);
+  --clr-black: rgba(37, 37, 37, 1);
+  --clr-intense-green: rgba(43, 216, 134, 1);
+  --clr-deep-purple: rgba(101, 85, 143, 1);
+  --font-header: "Playfair Display", serif;
+  --font-body: "Lato", sans-serif;
+}
+
+.footerall {
+  display: flex;
+  justify-content: center;
+  background-color: var(--clr-yellow);
+  padding: 1.25rem;
+  font-family: var(--font-body);
+  /* margin: 10vh 0 5vh 0; */
+  width: 90%;
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-top: 1.5vh;
+  margin-bottom: 4.5vh;
+
+  .footer {
+    width: 90%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .footer__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__section--right {
+    align-items: flex-end;
+  }
+
+  .footer__logo-img {
+    width: 16.5rem;
+    height: auto;
+  }
+
+  .footer__link {
+    margin-top: 0.625rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer__link a {
+    color: var(--clr-black);
+    font-size: 0.875rem;
+    text-decoration: none;
+    margin-top: 0.25rem;
+  }
+
+  .footer__socials {
+    display: flex;
+    justify-content: center;
+    gap: 3.7rem;
+    margin-top: 10px;
+    position: relative;
+    align-items: center;
+  }
+
+  .footer__socials a {
+    display: inline-block;
+    height: auto;
+  }
+
+  .footer__copyright {
+    margin-top: 2px;
+    text-align: center;
+    font-size: 1.25rem;
+  }
+
+  .footer__links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.25rem;
+  }
+
+  @media (max-width: 1024px) {
+    .footer__container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .footer__logo-img {
+      width: 165px;
+      height: 33px;
+    }
+    .LogoFb {
+      width: 17.5px;
+      height: 17.5px;
+    }
+    .LogoIst {
+      width: 20.42px;
+      height: 20.42px;
+    }
+    .LogoYtb {
+      width: 20.42px;
+      height: 23.33px;
+    }
+    .footer__socials {
+      gap: 2.7rem;
+    }
+    .footer__copyright {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .footer__section {
+      margin-bottom: 0.75rem;
+      align-items: center;
+    }
+
+    .footer__logo-img {
+      width: 165px;
+      height: 34.98px;
+    }
+
+    .footer__link a {
+      font-size: 0.75rem;
+      margin-top: 0.25rem;
+    }
+    .LogoFb {
+      width: 17.5px;
+      height: 18.55px;
+    }
+    .LogoIst {
+      width: 20.42px;
+      height: 21.64px;
+    }
+    .LogoYtb {
+      width: 20.42px;
+      height: 24.73px;
+    }
+    .footer__socials {
+      gap: 1rem;
+    }
+    .footer__copyright {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+  }
+}

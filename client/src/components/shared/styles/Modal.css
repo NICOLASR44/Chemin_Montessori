@@ -1,0 +1,50 @@
+/* Modal.css */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-body);
+}
+
+.modal__content {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid var(--clr-lavender);
+  border-radius: 30px;
+  background-color: white;
+  padding: 2rem;
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 1px 2px 2px;
+  text-align: center;
+}
+
+.modal__content.error-border {
+  border: 3px solid red; /* Bordure rouge pour les erreurs */
+}
+
+.modal__content.good-border {
+  border: 3px solid var(--clr-lavender);
+}
+
+.modal__flowers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 1rem;
+}
+.modal__message p {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.modal__button {
+  margin-top: 2rem;
+  border-radius: 30%;
+}

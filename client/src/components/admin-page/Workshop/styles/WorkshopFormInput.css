@@ -1,0 +1,21 @@
+.workshop-form-input {
+  flex: 1;
+  border: 1px solid var(--clr-grey);
+  border-radius: 1.25rem;
+  padding: 0.5rem 2rem;
+  margin-bottom: 1rem;
+
+  &[placeholder] {
+    font-style: italic;
+    font-size: 1rem;
+  }
+}
+
+.workshop-form-input-label {
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+}
+.workshop-form-input-text {
+  margin-bottom: -0.5rem;
+  margin-left: 0.5rem;
+}

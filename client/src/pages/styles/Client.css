@@ -1,0 +1,63 @@
+.client {
+  width: 90%;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  .client__welcome-section {
+    display: flex;
+    justify-content: center;
+    margin-block: 2vh;
+  }
+
+  .client__workshop-section {
+    min-width: 15.62rem;
+    width: 90%;
+    margin: 10vh auto;
+
+    .client__workshop-title {
+      display: flex;
+
+      .client__workshop-svg {
+        position: relative;
+        top: -1.25rem;
+        right: -0.625rem;
+      }
+    }
+
+    .client__workshop-list {
+      position: relative;
+
+      @media (width <= 640px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .client__workshop-svg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(55%, -80%);
+        @media (width <= 640px) {
+          width: 30%;
+          top: 5%;
+        }
+      }
+      .client__workshop-list-ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        padding: 1rem;
+        margin-block: 5vh;
+
+        @media (width <= 1024px) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (width <= 640px) {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+  }
+}

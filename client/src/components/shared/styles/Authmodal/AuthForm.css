@@ -1,0 +1,43 @@
+.authmodal__form-group {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: -0.8rem;
+}
+
+.authmodal__form-label {
+  font-weight: bold;
+  color: var(--clr-black);
+  border-radius: 30px;
+  background-color: var(--clr-light-green);
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--clr-grey);
+  width: 50%;
+}
+
+.authmodal__form-input {
+  color: var(--clr-black);
+  border-radius: 30px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--clr-grey);
+  font-size: 1rem;
+  font-family: var(--font-body);
+  width: 50%;
+}
+.authmodal__form input:focus {
+  outline: none;
+  border-color: var(--clr-intense-green);
+}
+
+.authmodal__form-error {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.5rem;
+  margin-left: 16.3rem;
+
+  display: flex;
+  justify-content: center;
+}

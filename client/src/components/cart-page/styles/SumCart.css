@@ -1,0 +1,42 @@
+.sum-cart {
+  background-color: var(--clr-lavender);
+  height: 14.937rem;
+  max-width: 32.875rem;
+  width: 105%;
+  border-radius: 1.875rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  .sum-cart-prices {
+    display: flex;
+    justify-content: space-between;
+    padding: 3vh 3vh 0 3vh;
+  }
+
+  .sum-cart-totals {
+    font-weight: 700;
+
+    .sum-cart-total {
+      font-size: 1.5rem;
+
+      @media (width <= 640px) {
+        font-size: 1rem;
+      }
+    }
+
+    .sum-cart-tva {
+      margin: 10% 0 30% 0;
+
+      @media (width <= 640px) {
+        font-size: 0.81rem;
+      }
+    }
+  }
+
+  .sum-cart-totals-sums {
+    text-align: end;
+  }
+}

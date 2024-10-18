@@ -1,0 +1,33 @@
+.control-section-blog {
+  margin-top: 5vh;
+  .control-section-blog__list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .control-section-blog__list-item button {
+    margin-top: 2.5rem;
+    border: none;
+    border-radius: 1.25rem;
+    font-size: 1.5rem;
+    padding: 2rem 2.25rem;
+    cursor: pointer;
+    transition: transform ease-in-out 0.05s;
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+  .control-section-blog__list-item:nth-child(1) button {
+    background-color: var(--clr-light-green);
+  }
+
+  .control-section-blog__list-item:nth-child(2) button {
+    background-color: var(--clr-yellow);
+  }
+
+  .control-section-blog__list-item:nth-child(3) button {
+    background-color: var(--clr-lavender);
+  }
+}

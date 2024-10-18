@@ -1,0 +1,13 @@
+.admin {
+  width: 90%;
+  max-width: 1440px;
+  margin: 5vh auto;
+
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+
+  .admin__main-container {
+    flex: 1;
+  }
+}

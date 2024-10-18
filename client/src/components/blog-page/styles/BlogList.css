@@ -1,0 +1,14 @@
+.blog-list {
+  .blog-list__page-arrow-svg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+
+    .blog-list__page-arrow {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+}

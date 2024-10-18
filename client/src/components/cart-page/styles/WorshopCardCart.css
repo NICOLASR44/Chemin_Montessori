@@ -1,0 +1,31 @@
+.worshop-card-cart {
+  border: solid 1px black;
+  background-color: white;
+  border-radius: 1.25rem;
+  padding: 0.625rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3%;
+  height: 5.8125rem;
+
+  @media (width <= 1024px) {
+    height: 4.5625rem;
+  }
+  @media (width <= 640px) {
+    height: 3.6875rem;
+  }
+
+  .worshop-card-cart__content {
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    @media (width <= 1024px) {
+      font-size: 1.25rem;
+    }
+    @media (width <= 640px) {
+      font-size: 1rem;
+    }
+  }
+}

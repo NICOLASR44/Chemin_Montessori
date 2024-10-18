@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+:root {
+  --clr-lavender: rgba(204, 189, 244, 1);
+  --clr-light-green: rgba(218, 255, 185, 1);
+  --clr-pink: rgba(255, 186, 243, 1);
+  --clr-intense-green: rgba(43, 216, 134, 1);
+  --clr-yellow: rgba(254, 239, 121, 1);
+  --clr-white: rgba(247, 247, 247, 1);
+  --clr-black: rgba(37, 37, 37, 1);
+  --clr-grey: rgba(166, 166, 166, 1);
+  --clr-deep-purple: rgba(101, 85, 143, 1);
+
+  --font-header: "Playfair Display", serif;
+  --font-body: "Lato", sans-serif;
+
+  --spacing-small: 0.6rem;
+  --spacing-medium: 1.5rem;
+  --spacing-large: 2rem;
+}
+
+.download__card-list {
+  width: 90%;
+  max-width: 1440px;
+  margin: 20px auto;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+
+  .download__card-list-pdf {
+    margin-top: 13rem;
+  }
+
+  .download__card-list-question {
+    margin-top: 19rem;
+  }
+}
+
+/* Phone */
+@media (width <= 640px) {
+  .download__card-list {
+    display: flex;
+    flex-direction: column;
+
+    .download__card-list-pdf {
+      margin-bottom: 3rem;
+      margin-top: 0rem;
+    }
+
+    .download__card-list-ressources {
+      margin-bottom: 3rem;
+    }
+
+    .download__card-list-question {
+      margin-top: 0rem;
+    }
+  }
+}
+
+.download__card-list-pdf,
+.download__card-list-question,
+.download__card-list-ressources {
+  transition: transform 0.05s ease-in-out;
+}
+
+.download__card-list-pdf:hover,
+.download__card-list-question:hover,
+.download__card-list-ressources:hover {
+  transform: scale(0.9);
+  cursor: pointer;
+}

@@ -1,0 +1,6 @@
+.info-vignette__container {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: end; */
+  overflow: hidden;
+}

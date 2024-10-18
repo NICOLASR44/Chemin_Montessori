@@ -1,0 +1,42 @@
+.NavBar {
+  @media (max-width: 640px) {
+    /* min-width: 33.8re;m */
+  }
+}
+
+.blog-page__svg-title {
+  margin: auto;
+  display: flex;
+  max-width: 100%;
+
+  @media (max-width: 1024px) {
+    margin-top: 7rem;
+  }
+
+  .blog-page__title {
+    @media (max-width: 640px) {
+      padding: 0 4rem;
+      text-align: center;
+    }
+  }
+
+  .blog-page__svg {
+    position: relative;
+    left: 4rem;
+    bottom: 2rem;
+
+    @media (max-width: 1024px) {
+      bottom: 3.5rem;
+    }
+
+    @media (max-width: 640px) {
+      display: none;
+    }
+  }
+}
+
+.blog-page__footer {
+  @media (max-width: 640px) {
+    /* min-width: 33.8rem; */
+  }
+}

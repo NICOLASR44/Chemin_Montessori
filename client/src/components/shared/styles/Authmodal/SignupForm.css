@@ -1,0 +1,51 @@
+.signupform {
+  margin-top: 2rem;
+
+  .signupform__newsletter {
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    justify-content: center;
+    margin-top: 2rem;
+
+    .signupform__newsletter-checkbox {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--clr-deep-purple);
+      border-radius: 4px;
+      cursor: pointer;
+      position: relative;
+      margin-left: 10px;
+      vertical-align: text-top;
+    }
+
+    .signupform__newsletter-checkbox:checked {
+      background-color: var(--clr-deep-purple);
+      border: none;
+    }
+
+    .signupform__newsletter-checkbox:checked::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 5px;
+      width: 6px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+
+    .signupform__newsletter-checkbox:hover {
+      border-color: var(--clr-deep-purple);
+    }
+  }
+  .signupform__submit {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}

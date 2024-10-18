@@ -1,0 +1,15 @@
+.workshop-form {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+
+  .workshop-form-upload {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .workshop-form__button-stack {
+    margin-top: 2rem;
+    align-self: flex-end;
+  }
+}

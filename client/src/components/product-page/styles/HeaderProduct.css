@@ -1,0 +1,27 @@
+.header-product__info {
+  display: flex;
+  align-items: flex-start;
+}
+
+@media (min-width: 640px) {
+  .header-product {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5vh;
+  }
+}
+
+@media (max-width: 1174px) {
+  .header-product {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-product__video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5vh;
+  }
+}

@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+:root {
+  --clr-lavender: rgba(204, 189, 244, 1);
+  --clr-light-green: rgba(218, 255, 185, 1);
+  --clr-pink: rgba(255, 186, 243, 1);
+  --clr-intense-green: rgba(43, 216, 134, 1);
+  --clr-yellow: rgba(254, 239, 121, 1);
+  --clr-white: rgba(247, 247, 247, 1);
+  --clr-black: rgba(37, 37, 37, 1);
+  --clr-grey: rgba(166, 166, 166, 1);
+  --clr-deep-purple: rgba(101, 85, 143, 1);
+
+  --font-header: "Playfair Display", serif;
+  --font-body: "Lato", sans-serif;
+}
+
+.buy-button {
+  /* margin-top: 2.5vh; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* height: 16rem; */
+  background-color: var(--clr-light-green);
+  border-radius: 1.25rem;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+  /* width: 26rem; */
+  /* margin-left: 14rem; */
+  padding: 1.5rem 1rem;
+}
+
+.buy-button__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.buy-button__description {
+  font-size: 1rem;
+  padding: 1rem 3rem 1rem 3rem;
+  @media (max-width: 640px) {
+    font-size: 1rem;
+  }
+}
+.buy-button__content {
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+}
+.buy-button__pricing {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--clr-black);
+  margin: 0.5rem 0 1rem 0;
+  @media (max-width: 640px) {
+    font-size: 1.5rem;
+  }
+}

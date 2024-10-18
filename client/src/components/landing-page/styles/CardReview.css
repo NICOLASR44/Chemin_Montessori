@@ -1,0 +1,31 @@
+.card-review {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-lavender);
+  max-width: 350px;
+  padding: 16px;
+  border-radius: 0.75rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  .card-review__flex-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .card-review__name {
+    font-family: var(--font-header);
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  .card-review__date {
+    margin-left: auto;
+    font-size: 0.625rem;
+  }
+
+  .card-review__p {
+    margin-block: 1.25rem;
+    line-height: 1.5;
+  }
+}

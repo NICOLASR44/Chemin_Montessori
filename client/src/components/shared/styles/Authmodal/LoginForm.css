@@ -1,0 +1,27 @@
+.loginform__signin-form {
+  margin-top: 2rem;
+
+  .loginform__error-message {
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .loginform__submit {
+    margin-top: 2rem;
+
+    .authmodal__submit-btn {
+      display: flex;
+      justify-content: center;
+    }
+
+    .loginform__forgot-password {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    #forgot-password-link:focus ~ .authmodal__header-pinkcross {
+      left: -1rem; /* Ajuste selon ton besoin */
+      bottom: 25rem; /* Ajuste selon ton besoin */
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.admin-review-card-validation__container {
+  /* max-width: 33.625rem; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.625rem;
+  background-color: rgb(231, 231, 231);
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 1.5rem;
+
+  .admin-review-card-validation__card {
+    display: flex;
+    align-items: center;
+    gap: 3.75rem;
+    max-height: 9.31rem;
+    border: solid 1px black;
+    border-radius: 1.25rem;
+    padding: 0.625rem;
+    background-color: var(--clr-white);
+
+    .admin-review-card-validation__profil {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.31rem;
+
+      .admin-review-card-validation__profil-img {
+        width: 3.125rem;
+        height: 3.125rem;
+        border-radius: 50%;
+      }
+      .admin-review-card-validation__profil-userName {
+        font-weight: 700;
+      }
+    }
+  }
+
+  .admin-review-card-validation__title-button {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-left: auto;
+
+    .admin-review-card-validation__title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 0.6875rem;
+    }
+
+    .admin-review-card-validation__double-button {
+      display: flex;
+      gap: 2.5rem;
+    }
+  }
+}

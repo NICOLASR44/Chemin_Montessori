@@ -1,0 +1,29 @@
+.uppernav {
+  display: flex;
+  flex: 1;
+
+  .uppernav__list {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .uppernav__list-item {
+    border: 1px solid var(--clr-grey);
+    border-radius: 1.25rem;
+    padding: 0.75rem 0.5rem;
+
+    & a {
+      text-decoration: none;
+      color: black;
+    }
+
+    & p {
+      cursor: pointer;
+    }
+
+    &:last-of-type {
+      border: 1px solid rgb(80, 80, 80);
+    }
+  }
+}

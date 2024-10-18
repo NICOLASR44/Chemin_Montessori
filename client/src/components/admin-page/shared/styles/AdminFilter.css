@@ -1,0 +1,29 @@
+.admin-filter {
+  display: flex;
+  justify-content: center;
+  margin-block: 10vh;
+
+  .filter_fieldset {
+    background-color: var(--clr-lavender);
+    box-shadow: 0 4px 4px rgba(88, 87, 87, 0.35);
+    border: none;
+    border-radius: 9px;
+    width: 28.875rem;
+    height: 4.0625rem;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .filter_fieldset-search-input {
+    border: none;
+    width: 80%;
+    border-radius: 5px;
+    height: 2.4375rem;
+    padding: 10px;
+  }
+  .filter_reset-arrow-desktop {
+    cursor: pointer;
+  }
+}

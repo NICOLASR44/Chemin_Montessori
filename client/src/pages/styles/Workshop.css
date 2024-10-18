@@ -1,0 +1,114 @@
+.workshop-page {
+  position: relative;
+  overflow: hidden;
+
+  .workshop__green-line {
+    width: 100vw;
+    z-index: -1;
+    position: absolute;
+    top: 1%;
+    left: 0;
+
+    @media (width <= 640px) {
+      display: none;
+    }
+  }
+
+  .workshop {
+    width: 90%;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    .workshop__discover {
+      .generic-title {
+        position: relative;
+      }
+
+      .workshop__discover-svg-star {
+        position: absolute;
+        left: 50%;
+        transition-duration: 0.3s;
+
+        @media (width <= 1559px) {
+          left: 60%;
+        }
+        @media (width <= 1252px) {
+          width: 10%;
+          left: 70%;
+        }
+        @media (width <= 790px) {
+          left: 80%;
+        }
+        @media (width <= 684px) {
+          left: 90%;
+        }
+        @media (width <= 640px) {
+          left: 68%;
+          transform: translateY(-5px);
+        }
+      }
+      .workshop__discover-svg-flower {
+        position: absolute;
+        transform: translate(0, -3.75rem);
+        right: 14%;
+
+        @media (width <= 1384px) {
+          transform: translate(0, -3.75rem);
+          right: 0vh;
+        }
+        @media (width <= 640px) {
+          width: 15%;
+        }
+      }
+    }
+  }
+}
+
+.workshop__expert {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 10vh;
+
+  .generic-title {
+    margin-top: 5vh;
+    margin-bottom: 4rem;
+  }
+
+  .workshop__expert-svg-splash {
+    position: absolute;
+    top: 5%;
+    left: -7%;
+
+    @media (width <= 900px) {
+      width: 50px;
+      top: 0;
+      left: -12%;
+    }
+  }
+
+  .workshop__expert-list-container {
+    @media (width <= 640px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+}
+.workshop__expert-list-ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 1rem;
+  margin-block: 5vh;
+  justify-items: center;
+
+  @media (width <= 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (width <= 640px) {
+    grid-template-columns: 1fr;
+  }
+}

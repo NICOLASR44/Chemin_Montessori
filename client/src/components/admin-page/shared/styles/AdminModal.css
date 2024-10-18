@@ -1,0 +1,62 @@
+.admin-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-body);
+}
+
+.admin-modal__container {
+  max-width: 45ch;
+  padding: 2rem 3rem;
+  border: none;
+  border-radius: 1.25rem;
+  line-height: 1.75rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  background-color: var(--clr-white);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  .admin-modal__content {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+
+  .admin-modal__button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    button {
+      font-weight: 600;
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+      cursor: pointer;
+      transition: transform ease-in-out 0.02s;
+      border: none;
+      border-radius: 1.25rem;
+
+      &:active {
+        transform: scale(0.9);
+      }
+    }
+  }
+
+  .admin-modal__back-button {
+    background-color: var(--clr-intense-green);
+    padding: 0.5rem 1rem;
+  }
+
+  .admin-modal__validate-button {
+    background-color: #e03d3d;
+    padding: 0.5rem 1.75rem;
+  }
+}

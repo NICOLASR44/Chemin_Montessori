@@ -1,0 +1,6 @@
+.admin-review-list {
+  padding: 0rem 2rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1rem;
+}

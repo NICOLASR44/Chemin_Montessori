@@ -1,0 +1,22 @@
+.generic-title {
+  font-size: 4rem;
+
+  /* tablet */
+  @media (640px <= width <= 1024px) {
+    font-size: 3rem;
+  }
+
+  /* mobile */
+  @media (width < 640px) {
+    font-size: 2rem;
+  }
+
+  .generic-title--bold {
+    font-weight: bold;
+  }
+
+  .generic-title--italic {
+    font-style: italic;
+    font-family: var(--font-header);
+  }
+}

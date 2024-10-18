@@ -1,0 +1,19 @@
+.info-video {
+  .info-video__title {
+    font-size: 1.75rem;
+    font-weight: 700;
+  }
+
+  .info-video__description {
+    margin: 3vh 0;
+    line-height: 1.2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .info-video {
+    .info-video__title {
+      font-size: 1.5rem;
+    }
+  }
+}

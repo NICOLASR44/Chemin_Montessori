@@ -1,0 +1,11 @@
+.admin-blog-list-container {
+  margin-top: 2rem;
+
+  .admin-blog-list-container__list {
+    text-align: center;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1rem;
+  }
+}

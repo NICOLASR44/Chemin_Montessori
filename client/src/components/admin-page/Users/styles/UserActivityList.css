@@ -1,0 +1,46 @@
+.user-activity-list {
+  background-color: var(--clr-white);
+  border-radius: 1.25rem;
+  padding: 1rem;
+
+  .user-activity-list__title {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  .user-activity-list__list {
+    margin-top: 2rem;
+
+    & > * {
+      margin-top: 1rem;
+    }
+  }
+
+  .user-activity-list__list-item--comment {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .user-activity-list__list-item--visible {
+    margin-left: auto;
+  }
+
+  .user-activity-list__list-item--workshop {
+    font-weight: 600;
+  }
+
+  .user-activity-list__title-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .user-activity-list__button {
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+  }
+
+  .user-acitivity-list__comment-container {
+    display: flex;
+  }
+}
