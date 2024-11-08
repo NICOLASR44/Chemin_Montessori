@@ -16,7 +16,7 @@ const authMiddleware = (req, res, next) => {
 
     const decoded = jwt.verify(actualToken, process.env.JWT_SECRET);
 
-    req.user = { id: decoded.id };
+    req.user = { id: decoded.id, status: decoded.status };
     return next(); // Passe au middleware suivant et retourne une valeur
 
     /* throw new Error("Format de token incorrect"); */

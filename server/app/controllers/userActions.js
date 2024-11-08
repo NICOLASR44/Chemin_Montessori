@@ -175,15 +175,16 @@ const loginUser = async (req, res, next) => {
     }
 
     // Utiliser la méthode loginUser du UserRepository
-    const userId = await userRepo.loginUser(
+    const { id, status } = await userRepo.loginUser(
       loginInfo.username,
       loginInfo.password
     );
 
     // Générer un token JWT
     const token = generateAuthToken({
-      id: userId,
+      id,
       username: loginInfo.username,
+      status, // Inclure le statut dans le token
     });
 
     // Configurer le cookie (utiliser secure: false pour développement)
