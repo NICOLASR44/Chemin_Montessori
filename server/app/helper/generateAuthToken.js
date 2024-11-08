@@ -4,6 +4,7 @@ const generateAuthToken = (user) => {
   const payload = {
     id: user.id,
     email: user.email,
+    status: user.status,
   };
 
   // Utiliser la variable d'environnement JWT_SECRET pour signer le token
