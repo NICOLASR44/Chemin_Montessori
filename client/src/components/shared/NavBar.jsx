@@ -26,16 +26,16 @@ export default function Navbar() {
 
   // Fonction pour gérer la déconnexion
   const handleLogout = async () => {
-    await logout(); // Met à jour l'état pour indiquer que l'utilisateur est déconnecté
-    navigate("/"); // Redirige vers la page d'accueil après la déconnexion
+    await logout();
+    navigate("/");
   };
 
   // Fonction pour gérer le clic sur le bouton de connexion/déconnexion
   const handleConnectionClick = () => {
     if (user) {
-      handleLogout(); // Déconnecte si l'utilisateur est connecté
+      handleLogout();
     } else {
-      setIsModalOpen(true); // Ouvre la modal si l'utilisateur n'est pas connecté
+      setIsModalOpen(true);
     }
   };
 
@@ -54,7 +54,14 @@ export default function Navbar() {
           </Link>
           <NavLinks />
           <div className="navbar__logo-cart">
-            {/* Afficher le bouton "Se connecter" ou "Déconnexion" */}
+            {/* Bouton Admin visible uniquement pour les administrateurs */}
+            {user && user.isAdmin && (
+              <Link to="/admin" className="navbar__admin-button">
+                Admin
+              </Link>
+            )}
+
+            {/* Bouton de connexion ou déconnexion */}
             <button
               className="navbar__connect-button"
               onClick={handleConnectionClick}
@@ -62,9 +69,13 @@ export default function Navbar() {
             >
               {user ? "Déconnexion" : "Se connecter"}
             </button>
+
+            {/* Lien vers le panier */}
             <Link to="/panier" className="navbar__cart-button">
               <Panier width={40} height={40} />
             </Link>
+
+            {/* Avatar de l'utilisateur */}
             <Link
               to={user ? "/profil" : "#"}
               onClick={() => {
@@ -93,6 +104,7 @@ export default function Navbar() {
         </div>
       )}
 
+      {/* Mobile version */}
       {isMobile && (
         <div className="navbar__mobile">
           <Link to="/">
@@ -119,6 +131,15 @@ export default function Navbar() {
             }`}
           >
             <NavLinks />
+
+            {/* Bouton Admin pour les mobiles, visible uniquement pour les administrateurs */}
+            {user && user.isAdmin && (
+              <Link to="/admin" className="navbar__admin-button">
+                Admin
+              </Link>
+            )}
+
+            {/* Bouton de connexion/déconnexion */}
             <button
               className={`navbar__connect-button ${user ? "logout" : "login"}`}
               onClick={handleConnectionClick}
@@ -130,6 +151,8 @@ export default function Navbar() {
             >
               {user ? "Déconnexion" : "Se connecter"}
             </button>
+
+            {/* Avatar de l'utilisateur */}
             <div className="navbar__mobile-star">
               <StarEmpty
                 width={50}
@@ -170,6 +193,7 @@ export default function Navbar() {
         </div>
       )}
 
+      {/* Modal de connexion */}
       {isModalOpen && (
         <AuthModalWrapper
           closeModal={closeModal}
