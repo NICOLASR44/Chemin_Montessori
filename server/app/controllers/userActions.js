@@ -86,9 +86,8 @@ const editUserInfo = async (req, res, next) => {
 
 const checkauth = (req, res) => {
   // Le middleware `authMiddleware` a déjà ajouté `req.user` après avoir décodé le token JWT
-  const { id } = req.user; // Extraire l'ID utilisateur depuis `req.user` (décodé par le middleware)
+  const { id, status } = req.user; // Extraire l'ID utilisateur et le statut depuis `req.user`
 
-  // Assure-toi que `userId` est défini
   if (!id) {
     return res
       .status(401)
@@ -103,9 +102,13 @@ const checkauth = (req, res) => {
         return res.status(404).json({ message: "Utilisateur introuvable" });
       }
 
+      // Vérification du statut admin
+      const isAdmin = status === "admin";
+
       return res.status(200).json({
         message: "Utilisateur authentifié",
         user,
+        isAdmin, // Ajoute `isAdmin` pour indiquer si l'utilisateur est administrateur
       });
     })
     .catch((err) => {
