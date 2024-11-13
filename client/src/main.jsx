@@ -19,6 +19,7 @@ import PageConstruction from "./pages/PageConstruction";
 import { AuthProvider } from "./context/AuthContext";
 import { UserContextProvider } from "./context/UserContext";
 import { CartContextProvider } from "./context/CartContext";
+import NotFoundPage from "./pages/NotFoundPage";
 
 const router = createBrowserRouter([
   {
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
   {
     path: "/profil",
     element: <Client />,
+  },
+  {
+    path: "*",
+    element: <NotFoundPage />,
   },
 ]);
 
