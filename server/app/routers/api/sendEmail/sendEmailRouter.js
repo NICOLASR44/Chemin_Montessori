@@ -38,12 +38,10 @@ router.post("/", (req, res) => {
   };
 
   // Envoyer l'email
-  transporter.sendMail(mailOptions, (error, info) => {
+  transporter.sendMail(mailOptions, (error) => {
     if (error) {
-      console.log(error);
       res.status(500).send({ message: "Erreur lors de l'envoi de l'email" });
     } else {
-      console.log("Email envoyé: " + info.response);
       res.status(200).send({ message: "Email envoyé avec succès" });
     }
   });
