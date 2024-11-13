@@ -1,3 +1,4 @@
+/* Structure principale de la navbar */
 .NavBar {
   width: 90%;
   max-width: 1440px;
@@ -16,14 +17,8 @@
       height: 40px;
       object-fit: cover;
       transition: all 0.3s ease;
-
-      @media (max-width: 800px) {
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        object-fit: cover;
-      }
     }
+
     .navbar__desktop {
       display: flex;
       justify-content: space-between;
@@ -44,16 +39,8 @@
       }
     }
 
-    .navbar__cart-button svg,
-    .navbar__connection-button svg {
-      fill: var(--clr-light-green);
-      transition: fill 0.3s ease;
-    }
-
-    .navbar__cart-button svg:hover,
-    .navbar__connection-button svg:hover {
-      fill: var(--clr-pink);
-    }
+    /* Boutons de la navbar */
+    .navbar__admin-button,
     .navbar__connect-button {
       font-family: var(--font-body);
       font-size: 1rem;
@@ -62,14 +49,36 @@
       border: 1px solid var(--clr-grey);
       border-radius: 16px;
       transition:
-        border 0.3s ease,
+        border-color 0.3s ease,
         background-color 0.3s ease;
-      background-color: var(--clr-yellow);
       font-weight: bold;
-      box-shadow: rgba(0, 0, 0, 0.35) 2px 3px 3px -1px;
       white-space: nowrap;
+      text-decoration: none;
+      color: var(--clr-black);
+      box-shadow: rgba(0, 0, 0, 0.35) 2px 3px 3px -1px;
+    }
 
-      @media (max-width: 1200px) {
+    /* Couleur de fond et effets de survol spécifiques */
+    .navbar__admin-button {
+      background-color: var(--clr-lavender);
+    }
+
+    .navbar__admin-button:hover,
+    .navbar__connect-button:hover {
+      border-color: black; /* Bordure noire au survol */
+    }
+
+    .navbar__connect-button {
+      background-color: var(--clr-yellow);
+    }
+
+    /* Ajustements pour les écrans plus petits */
+    @media (max-width: 1200px) {
+      .navbar__admin-button {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.9rem;
+      }
+      .navbar__connect-button {
         padding: 0.3rem 0.8rem;
         font-size: 0.9rem;
       }
@@ -155,7 +164,6 @@
     font-weight: normal;
     font-size: 1.2rem;
     border: none;
-    border-radius: 0%;
     background-color: transparent;
     box-shadow: none;
   }
@@ -189,8 +197,13 @@
 
   .navbar__mobile-connection li {
     margin-top: 2rem;
+
     .navbar__connect-button {
       font-size: 1rem;
     }
+  }
+  .navbar__admin-button {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
   }
 }

@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
+import AdminRoute from "./hooks/AdminRoute";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
 import Workshop from "./pages/Workshop";
@@ -18,6 +19,7 @@ import PageConstruction from "./pages/PageConstruction";
 import { AuthProvider } from "./context/AuthContext";
 import { UserContextProvider } from "./context/UserContext";
 import { CartContextProvider } from "./context/CartContext";
+import NotFoundPage from "./pages/NotFoundPage";
 
 const router = createBrowserRouter([
   {
@@ -38,7 +40,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin",
-    element: <Admin />,
+    element: (
+      <AdminRoute>
+        <Admin />
+      </AdminRoute>
+    ),
   },
   {
     path: "/contact",
@@ -66,6 +72,10 @@ const router = createBrowserRouter([
   {
     path: "/profil",
     element: <Client />,
+  },
+  {
+    path: "*",
+    element: <NotFoundPage />,
   },
 ]);
 

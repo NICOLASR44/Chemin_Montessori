@@ -8,85 +8,73 @@ import {
   useCallback,
 } from "react";
 
-// Créer le contexte
 const AuthContext = createContext();
 
 function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true); // Ajout de l'état de chargement
 
-  // Fonction pour appeler /checkauth et vérifier l'authentification côté backend
   const checkAuth = useCallback(async () => {
     try {
       const response = await fetch(
         `${import.meta.env.VITE_API_URL}/api/user/checkauth`,
         {
           method: "GET",
-          credentials: "include", // Inclut les cookies dans la requête
+          credentials: "include",
         }
       );
 
       if (response.ok) {
         const data = await response.json();
-        setUser(data.user); // Mettre à jour l'état utilisateur avec les données reçues
+        setUser({ ...data.user, isAdmin: data.isAdmin }); // Inclure `isAdmin` dans l'état `user`
       } else {
-        console.error(
-          "Échec de la vérification de l'authentification :",
-          response.status
-        );
-        setUser(null); // Si la vérification échoue, réinitialiser l'utilisateur
+        setUser(null);
       }
     } catch (error) {
-      console.error("Erreur lors de la requête checkauth :", error);
-      setUser(null); // Réinitialiser l'utilisateur en cas d'erreur
+      setUser(null);
+    } finally {
+      setLoading(false); // Fin du chargement après la requête
     }
   }, []);
 
-  // Appeler checkAuth lors du chargement de la page
   useEffect(() => {
-    checkAuth(); // Vérifier l'authentification via l'API
+    checkAuth();
   }, [checkAuth]);
 
-  // Fonction de login
   const login = useCallback(
     (newToken) => {
       Cookies.set("auth_token", newToken, { expires: 1 });
-      checkAuth(); // Vérifier l'authentification après la connexion
+      checkAuth();
     },
     [checkAuth]
   );
 
-  // Fonction de déconnexion
   const logout = useCallback(async () => {
     try {
       const response = await fetch(
         `${import.meta.env.VITE_API_URL}/api/user/logout`,
         {
           method: "POST",
-          credentials: "include", // Inclure les cookies dans la requête
+          credentials: "include",
         }
       );
 
       if (response.ok) {
-        // Suppression du cookie côté client
         Cookies.remove("auth_token", { path: "/" });
-        setUser(null); // Réinitialiser l'état de l'utilisateur
-      } else {
-        console.error("Échec de la déconnexion :", response.status);
+        setUser(null);
       }
     } catch (error) {
       console.error("Erreur lors de la déconnexion :", error);
     }
   }, []);
 
-  // Utiliser l'id de l'utilisateur de l'état `user`
   const userId = user?.id;
 
   const contextValue = useMemo(
-    () => ({ user, userId, login, logout }),
-    [user, userId, login, logout]
+    () => ({ user, userId, loading, login, logout }),
+    [user, userId, loading, login, logout]
   );
 
-  // Fournir le contexte avec les fonctions et l'utilisateur
   return (
     <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
   );

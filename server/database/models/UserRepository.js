@@ -91,7 +91,7 @@ WHERE
 
   async loginUser(username, plainPassword) {
     const [rows] = await this.database.query(
-      `SELECT id, password FROM ${this.table} WHERE username = ?`,
+      `SELECT id, password, status FROM ${this.table} WHERE username = ?`,
       [username]
     );
 
@@ -99,11 +99,9 @@ WHERE
       throw new Error("Utilisateur non trouvé");
     }
 
-    const { id } = rows[0];
+    const { id, status } = rows[0];
     console.info(rows[0].password, plainPassword);
 
-    // const result = verifyPassword(rows[0].password, plainPassword);
-    // console.info(result);
     // Vérifier le mot de passe
     const isMatch = await argon2.verify(rows[0].password, plainPassword);
     console.info(isMatch);
@@ -111,7 +109,8 @@ WHERE
       throw new Error("Mot de passe incorrect");
     }
 
-    return id;
+    // Retourne l'id et le statut de l'utilisateur
+    return { id, status };
   }
 
   // Vérifier si un nom d'utilisateur existe dans la base de données

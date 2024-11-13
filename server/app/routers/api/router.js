@@ -17,6 +17,7 @@ const cartRouter = require("./cart/cartRouter");
 const blogRouter = require("./blog/blogRouter");
 const authMidlleware = require("../../middleware/authMiddleware");
 const orderRouter = require("./order/orderRouter");
+const sendEmailRouter = require("./sendEmail/sendEmailRouter");
 
 router.use("/items", itemsRouter);
 
@@ -33,6 +34,8 @@ router.use("/cart", cartRouter);
 router.use("/blog", blogRouter);
 
 router.use("/order", orderRouter);
+
+router.use("/sendEmail", sendEmailRouter);
 
 /* ************************************************************************* */
 

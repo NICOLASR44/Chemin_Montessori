@@ -52,10 +52,7 @@ function AuthModalWrapper({ closeModal, defaultTab, onLoginSuccess }) {
   // Gestionnaire de soumission du formulaire d'inscription
   const handleSubmitSignup = async (e) => {
     e.preventDefault();
-    console.info(
-      "Formulaire d'inscription soumis avec les données :",
-      formData
-    );
+    console.info("Inscription réussi");
     const newErrors = validateForm(formData, false); // 'false' indique que c'est pour l'inscription
     setErrors(newErrors);
 
@@ -87,10 +84,7 @@ function AuthModalWrapper({ closeModal, defaultTab, onLoginSuccess }) {
   // Gestionnaire de soumission du formulaire de connexion
   const handleSubmitLogin = async (e) => {
     e.preventDefault();
-    console.info(
-      "Formulaire de connexion soumis avec les données :",
-      formDataLogin
-    );
+    console.info("Formulaire de connexion soumis avec les données ");
 
     const newErrors = validateFormLogin(formDataLogin, true); // 'true' indique que c'est pour la connexion
     setErrors(newErrors);

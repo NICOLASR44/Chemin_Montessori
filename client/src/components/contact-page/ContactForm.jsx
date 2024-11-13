@@ -40,7 +40,7 @@ function ContactForm() {
 
     // Vérification que l'adresse e-mail est valide
     if (!isValidEmail(email)) {
-      setBorderClass("error-border"); // choix de la bordure grace aux props
+      setBorderClass("error-border");
       setModalMessage(
         <div className="error-border">
           <p>Oupsss !!!</p>
@@ -51,14 +51,42 @@ function ContactForm() {
       return;
     }
 
-    setBorderClass("good-border");
-    setModalMessage(
-      <div className="good-border">
-        <p>Merci pour votre message !</p>
-        <p>Nous vous répondrons très bientôt.</p>
-      </div>
-    );
-    setShowModal(true);
+    // Préparer les données du formulaire
+    const formData = {
+      name,
+      email,
+      message,
+      newsletter,
+    };
+
+    // Envoyer les données au backend via fetch
+    fetch("http://localhost:3310/api/sendEmail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.json())
+      .then(() => {
+        setModalMessage(
+          <div className="good-border">
+            <p>Merci pour votre message !</p>
+            <p>Nous vous répondrons très bientôt.</p>
+          </div>
+        );
+        setShowModal(true);
+      })
+      .catch((error) => {
+        setModalMessage(
+          <div className="error-border">
+            <p>Erreur lors de l'envoi !</p>
+            <p>Veuillez réessayer plus tard.</p>
+          </div>
+        );
+        setShowModal(true);
+        console.error("Erreur:", error);
+      });
 
     // Réinitialiser les champs du formulaire
     setName("");
@@ -77,7 +105,7 @@ function ContactForm() {
 
   return (
     <>
-      <form className="contact-form">
+      <form className="contact-form" onSubmit={handleSubmit}>
         <div className="contact-form__field">
           <label htmlFor="name" className="contact-form__field-legend">
             Nom
@@ -138,7 +166,6 @@ function ContactForm() {
           <Button
             text="Envoyer"
             type="submit"
-            onClick={handleSubmit}
             style={{
               fontSize: "1rem",
               fontFamily: "var(--font-body)",
