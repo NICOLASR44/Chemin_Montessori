@@ -72,6 +72,6 @@
 }
 
 .not-authorized__button:hover {
-  background-color: var(--clr-deep-purple-dark);
+  background-color: var(--clr-deep-purple);
   transform: translateY(-3px);
 }
